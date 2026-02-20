@@ -523,8 +523,9 @@
 
         .ticker-tape {
             display: flex;
-            animation: scroll 30s linear infinite;
+            animation: tickerScroll 40s linear infinite;
             white-space: nowrap;
+            width: max-content;
         }
 
         .ticker-item {
@@ -536,11 +537,12 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            flex-shrink: 0;
         }
 
-        @keyframes scroll {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+        @keyframes tickerScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
         /* What You Get Section */
@@ -1478,20 +1480,25 @@
         <!-- Top Movers Ticker -->
         <section class="ticker-section">
             <div class="ticker-tape">
-                <div class="ticker-item">DE +9.77%</div>
-                <div class="ticker-item">DHT +36% YTD</div>
-                <div class="ticker-item">PLTR +33.46%</div>
-                <div class="ticker-item">NVDA Buy Ratings</div>
-                <div class="ticker-item">WMT ▼ Guidance Miss</div>
-                <div class="ticker-item">BTC $67,088</div>
-                <div class="ticker-item">AMZN -20 sentiment</div>
-                <div class="ticker-item">DE +9.77%</div>
-                <div class="ticker-item">DHT +36% YTD</div>
-                <div class="ticker-item">PLTR +33.46%</div>
-                <div class="ticker-item">NVDA Buy Ratings</div>
-                <div class="ticker-item">WMT ▼ Guidance Miss</div>
-                <div class="ticker-item">BTC $67,088</div>
-                <div class="ticker-item">AMZN -20 sentiment</div>
+                <div class="ticker-item"><span style="color:var(--success)">▲</span> DE +9.77%</div>
+                <div class="ticker-item"><span style="color:var(--success)">▲</span> DHT +36% YTD</div>
+                <div class="ticker-item"><span style="color:var(--success)">▲</span> PLTR +33.46%</div>
+                <div class="ticker-item"><span style="color:var(--accent-cyan)">★</span> NVDA Buy Ratings</div>
+                <div class="ticker-item"><span style="color:var(--danger)">▼</span> WMT Guidance Miss</div>
+                <div class="ticker-item"><span style="color:var(--success)">▲</span> BTC $67,088</div>
+                <div class="ticker-item"><span style="color:var(--danger)">▼</span> AMZN -20 sentiment</div>
+                <div class="ticker-item"><span style="color:var(--success)">▲</span> TSLA $435.27</div>
+                <div class="ticker-item"><span style="color:var(--warning)">●</span> VIX 20.19</div>
+                <!-- Duplicate for seamless loop -->
+                <div class="ticker-item"><span style="color:var(--success)">▲</span> DE +9.77%</div>
+                <div class="ticker-item"><span style="color:var(--success)">▲</span> DHT +36% YTD</div>
+                <div class="ticker-item"><span style="color:var(--success)">▲</span> PLTR +33.46%</div>
+                <div class="ticker-item"><span style="color:var(--accent-cyan)">★</span> NVDA Buy Ratings</div>
+                <div class="ticker-item"><span style="color:var(--danger)">▼</span> WMT Guidance Miss</div>
+                <div class="ticker-item"><span style="color:var(--success)">▲</span> BTC $67,088</div>
+                <div class="ticker-item"><span style="color:var(--danger)">▼</span> AMZN -20 sentiment</div>
+                <div class="ticker-item"><span style="color:var(--success)">▲</span> TSLA $435.27</div>
+                <div class="ticker-item"><span style="color:var(--warning)">●</span> VIX 20.19</div>
             </div>
         </section>
 
