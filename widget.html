@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freddy Sentiment Widget</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:transparent;overflow:hidden}
+.widget{border-radius:12px;padding:1.25rem;max-width:400px;font-family:'Inter',sans-serif}
+.widget.dark{background:rgba(8,12,24,0.95);border:1px solid rgba(246,173,85,0.3);color:#fff}
+.widget.light{background:rgba(255,255,255,0.95);border:1px solid #e2e8f0;color:#1a202c}
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.logo{font-weight:700;font-size:0.85rem}
+.dark .logo{color:#f6ad55}
+.light .logo{color:#d97706}
+.live{font-size:0.7rem;font-family:'JetBrains Mono',monospace;animation:pulse 2s infinite}
+.dark .live{color:#64748b}
+.light .live{color:#94a3b8}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+.tickers{display:flex;flex-direction:column;gap:0.6rem}
+.tick{display:flex;justify-content:space-between;align-items:center}
+.sym{font-family:'JetBrains Mono',monospace;font-size:0.85rem;font-weight:600;min-width:45px}
+.bar-wrap{flex:1;margin:0 0.75rem;height:6px;border-radius:3px;overflow:hidden}
+.dark .bar-wrap{background:rgba(255,255,255,0.1)}
+.light .bar-wrap{background:rgba(0,0,0,0.08)}
+.bar{height:100%;border-radius:3px;transition:width 1s ease}
+.bar.pos{background:linear-gradient(90deg,#10b981,#34d399)}
+.bar.neu{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+.bar.neg{background:linear-gradient(90deg,#ef4444,#f87171)}
+.score{font-family:'JetBrains Mono',monospace;font-size:0.85rem;font-weight:600;min-width:35px;text-align:right}
+.score.pos{color:#10b981}
+.score.neu{color:#f59e0b}
+.score.neg{color:#ef4444}
+.footer{margin-top:1rem;padding-top:0.75rem;text-align:center}
+.dark .footer{border-top:1px solid rgba(255,255,255,0.1)}
+.light .footer{border-top:1px solid #e2e8f0}
+.footer a{font-size:0.7rem;text-decoration:none;font-weight:500}
+.dark .footer a{color:#f6ad55}
+.light .footer a{color:#d97706}
+.footer a:hover{text-decoration:underline}
+.updated{font-size:0.65rem;margin-top:0.4rem}
+.dark .updated{color:#475569}
+.light .updated{color:#94a3b8}
+</style>
+</head>
+<body>
+<div class="widget dark" id="widget">
+    <div class="header">
+        <span class="logo">⚡ FREDDY SENTIMENT</span>
+        <span class="live">● LIVE</span>
+    </div>
+    <div class="tickers" id="tickers"></div>
+    <div class="footer">
+        <a href="https://roberthellwig1999-svg.github.io/freddy-report/" target="_blank">Powered by The Freddy Report ⚡</a>
+        <div class="updated" id="updated"></div>
+    </div>
+</div>
+<script>
+// Default demo data (replaced by real API data when available)
+const DEMO_DATA = {
+    NVDA: {score:78,note:"AI chip demand strong"},
+    PLTR: {score:64,note:"WSB momentum"},
+    TSLA: {score:38,note:"Mixed sentiment"},
+    AMZN: {score:-20,note:"9-day losing streak"},
+    DE: {score:82,note:"Earnings beat +9.77%"},
+    WMT: {score:-42,note:"Guidance miss"},
+    MSFT: {score:55,note:"Cloud growth steady"},
+    AAPL: {score:32,note:"Services revenue up"},
+    META: {score:45,note:"Ad revenue stable"},
+    GOOG: {score:50,note:"AI search gains"},
+    AMD: {score:60,note:"Data center wins"},
+    COIN: {score:-15,note:"BTC volatility drag"},
+    SMCI: {score:42,note:"AI server demand"},
+    CRM: {score:35,note:"Mixed signals"},
+    AVGO: {score:68,note:"Networking AI play"},
+    DHT: {score:72,note:"Tanker rates record"},
+    SOL: {score:28,note:"Crypto fear extreme"},
+    BTC: {score:30,note:"$67K bounce"},
+    GME: {score:10,note:"Meme cycle quiet"},
+    SPY: {score:-12,note:"VIX above 20"}
+};
+
+// Parse URL params
+const params = new URLSearchParams(window.location.search);
+const theme = params.get('theme') || 'dark';
+const tickerList = (params.get('tickers') || 'NVDA,PLTR,TSLA,AMZN,WMT').split(',').map(t=>t.trim().toUpperCase());
+const maxTickers = Math.min(parseInt(params.get('max') || '8'), 10);
+
+// Apply theme
+const widget = document.getElementById('widget');
+widget.classList.remove('dark','light');
+widget.classList.add(theme);
+
+// Render tickers
+const container = document.getElementById('tickers');
+const tickers = tickerList.slice(0, maxTickers);
+
+tickers.forEach(sym => {
+    const data = DEMO_DATA[sym] || {score: Math.floor(Math.random()*100)-30, note:"Scanning..."};
+    const s = data.score;
+    const cls = s > 20 ? 'pos' : s < -10 ? 'neg' : 'neu';
+    const barW = Math.min(Math.abs(s), 100);
+    
+    const row = document.createElement('div');
+    row.className = 'tick';
+    row.innerHTML = `
+        <span class="sym">${sym}</span>
+        <div class="bar-wrap"><div class="bar ${cls}" style="width:${barW}%"></div></div>
+        <span class="score ${cls}">${s > 0 ? '+' : ''}${s}</span>
+    `;
+    container.appendChild(row);
+});
+
+// Update time
+const now = new Date();
+document.getElementById('updated').textContent = `Updated: ${now.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})} ${now.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})}`;
+
+// Animate bars on load
+setTimeout(() => {
+    document.querySelectorAll('.bar').forEach(b => {
+        const w = b.style.width;
+        b.style.width = '0%';
+        requestAnimationFrame(() => { b.style.width = w; });
+    });
+}, 100);
+</script>
+</body>
+</html>
