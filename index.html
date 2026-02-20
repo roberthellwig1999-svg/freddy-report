@@ -770,67 +770,245 @@
             </div>
         </section>
 
+        <!-- Live Market Pulse Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">📡 Today's Market Pulse</h2>
+                    <p class="section-subtitle">Real data from February 19, 2026 — this is what Freddy sees every morning</p>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                    <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem;">
+                        <div style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem;">S&P 500</div>
+                        <div style="font-size: 1.8rem; font-weight: 700; color: var(--danger);">▼ -0.26%</div>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem;">Walmart guidance miss, oil up 2% on Iran tensions</div>
+                    </div>
+                    <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem;">
+                        <div style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem;">Bitcoin (BTC)</div>
+                        <div style="font-size: 1.8rem; font-weight: 700; color: var(--success);">$67,088 ▲ 1.31%</div>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem;">Bouncing off 2-day losing streak. Down 23% YTD from $126K ATH</div>
+                    </div>
+                    <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem;">
+                        <div style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem;">VIX (Fear Index)</div>
+                        <div style="font-size: 1.8rem; font-weight: 700; color: var(--warning);">20.19 ▲ 2.91%</div>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem;">Above 20 threshold — elevated fear. First surge in 8 months</div>
+                    </div>
+                    <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem;">
+                        <div style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem;">Crypto Fear & Greed</div>
+                        <div style="font-size: 1.8rem; font-weight: 700; color: var(--danger);">9-16 🔴 EXTREME FEAR</div>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem;">Matches 2022 FTX collapse levels — historically a buy signal</div>
+                    </div>
+                </div>
+                <!-- Top Movers -->
+                <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin-bottom: 2rem;">
+                    <h3 style="color: var(--accent-gold); margin-bottom: 1.5rem; font-size: 1.2rem;">🔥 Today's Top Movers</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                        <div style="padding: 1rem; background: rgba(16, 185, 129, 0.1); border-radius: 8px; border-left: 3px solid var(--success);">
+                            <div style="font-family: 'JetBrains Mono'; font-weight: 600;">DE (Deere)</div>
+                            <div style="color: var(--success); font-size: 1.4rem; font-weight: 700;">▲ +9.77%</div>
+                            <div style="color: var(--text-muted); font-size: 0.8rem;">$651.24 — Top S&P gainer</div>
+                        </div>
+                        <div style="padding: 1rem; background: rgba(16, 185, 129, 0.1); border-radius: 8px; border-left: 3px solid var(--success);">
+                            <div style="font-family: 'JetBrains Mono'; font-weight: 600;">DHT Holdings</div>
+                            <div style="color: var(--success); font-size: 1.4rem; font-weight: 700;">▲ +36% YTD</div>
+                            <div style="color: var(--text-muted); font-size: 0.8rem;">$16.64 — WSB trending, $80K bets</div>
+                        </div>
+                        <div style="padding: 1rem; background: rgba(16, 185, 129, 0.1); border-radius: 8px; border-left: 3px solid var(--success);">
+                            <div style="font-family: 'JetBrains Mono'; font-weight: 600;">PLTR</div>
+                            <div style="color: var(--success); font-size: 1.4rem; font-weight: 700;">▲ +33.46%</div>
+                            <div style="color: var(--text-muted); font-size: 0.8rem;">Momentum play — WSB favorite</div>
+                        </div>
+                        <div style="padding: 1rem; background: rgba(239, 68, 68, 0.1); border-radius: 8px; border-left: 3px solid var(--danger);">
+                            <div style="font-family: 'JetBrains Mono'; font-weight: 600;">WMT (Walmart)</div>
+                            <div style="color: var(--danger); font-size: 1.4rem; font-weight: 700;">▼ Guidance Miss</div>
+                            <div style="color: var(--text-muted); font-size: 0.8rem;">$2.75-2.85 EPS vs $2.96 expected</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- WSB Radar -->
+                <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem;">
+                    <h3 style="color: var(--accent-cyan); margin-bottom: 1.5rem; font-size: 1.2rem;">🦍 Reddit / WSB Radar</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+                        <span style="background: rgba(34, 211, 238, 0.15); color: var(--accent-cyan); padding: 0.5rem 1rem; border-radius: 20px; font-family: 'JetBrains Mono'; font-size: 0.9rem;">DHT 🔥</span>
+                        <span style="background: rgba(34, 211, 238, 0.15); color: var(--accent-cyan); padding: 0.5rem 1rem; border-radius: 20px; font-family: 'JetBrains Mono'; font-size: 0.9rem;">TSLA</span>
+                        <span style="background: rgba(34, 211, 238, 0.15); color: var(--accent-cyan); padding: 0.5rem 1rem; border-radius: 20px; font-family: 'JetBrains Mono'; font-size: 0.9rem;">PLTR</span>
+                        <span style="background: rgba(34, 211, 238, 0.15); color: var(--accent-cyan); padding: 0.5rem 1rem; border-radius: 20px; font-family: 'JetBrains Mono'; font-size: 0.9rem;">SMCI</span>
+                        <span style="background: rgba(34, 211, 238, 0.15); color: var(--accent-cyan); padding: 0.5rem 1rem; border-radius: 20px; font-family: 'JetBrains Mono'; font-size: 0.9rem;">AMC</span>
+                        <span style="background: rgba(34, 211, 238, 0.15); color: var(--accent-cyan); padding: 0.5rem 1rem; border-radius: 20px; font-family: 'JetBrains Mono'; font-size: 0.9rem;">GME</span>
+                        <span style="background: rgba(34, 211, 238, 0.15); color: var(--accent-cyan); padding: 0.5rem 1rem; border-radius: 20px; font-family: 'JetBrains Mono'; font-size: 0.9rem;">NVDA</span>
+                        <span style="background: rgba(34, 211, 238, 0.15); color: var(--accent-cyan); padding: 0.5rem 1rem; border-radius: 20px; font-family: 'JetBrains Mono'; font-size: 0.9rem;">AMD</span>
+                    </div>
+                    <p style="color: var(--text-muted); margin-top: 1rem; font-size: 0.85rem;">Updated every weekday at 9:00 AM ET from r/wallstreetbets, r/stocks, r/investing</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Sample Report Section -->
         <section class="section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Sample Report Preview</h2>
-                    <p class="section-subtitle">See what you'll receive in your inbox every morning</p>
+                    <h2 class="section-title">📬 Sample Report Preview</h2>
+                    <p class="section-subtitle">See what lands in your inbox every morning</p>
                 </div>
                 <div class="report-preview">
                     <div class="report-header">
-                        <div class="report-title">FREDDY REPORT</div>
-                        <div class="report-date">Thu, Feb 19 2026</div>
+                        <div class="report-title">⚡ FREDDY REPORT — Pre-Market Brief</div>
+                        <div class="report-date">Thu, Feb 19 2026 • 9:00 AM ET</div>
+                    </div>
+                    <div style="padding: 1rem 1.5rem; background: rgba(239, 68, 68, 0.1); border-left: 3px solid var(--danger); margin-bottom: 1rem; border-radius: 0 8px 8px 0;">
+                        <strong style="color: var(--danger);">⚠️ MARKET ALERT:</strong> <span style="color: var(--text-secondary);">VIX at 20.19 — Fear elevated. Crypto Fear & Greed at extreme lows (9-16). Historically these levels precede reversals. Proceed with caution on longs.</span>
                     </div>
                     <div class="ticker-list">
                         <div class="ticker-item">
                             <div class="ticker-info">
-                                <div class="ticker-symbol">TSLA</div>
-                                <div class="sentiment-bar">
-                                    <div class="sentiment-fill sentiment-positive" style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <div class="sentiment-score" style="color: var(--success)">+85</div>
-                        </div>
-                        <div class="ticker-item">
-                            <div class="ticker-info">
                                 <div class="ticker-symbol">NVDA</div>
                                 <div class="sentiment-bar">
-                                    <div class="sentiment-fill sentiment-positive" style="width: 72%"></div>
+                                    <div class="sentiment-fill sentiment-positive" style="width: 78%"></div>
                                 </div>
                             </div>
-                            <div class="sentiment-score" style="color: var(--success)">+72</div>
+                            <div class="sentiment-score" style="color: var(--success)">+78</div>
                         </div>
                         <div class="ticker-item">
                             <div class="ticker-info">
-                                <div class="ticker-symbol">AAPL</div>
+                                <div class="ticker-symbol">PLTR</div>
                                 <div class="sentiment-bar">
-                                    <div class="sentiment-fill sentiment-neutral" style="width: 30%"></div>
+                                    <div class="sentiment-fill sentiment-positive" style="width: 64%"></div>
                                 </div>
                             </div>
-                            <div class="sentiment-score" style="color: var(--warning)">+12</div>
+                            <div class="sentiment-score" style="color: var(--success)">+64</div>
                         </div>
                         <div class="ticker-item">
                             <div class="ticker-info">
-                                <div class="ticker-symbol">META</div>
+                                <div class="ticker-symbol">DE</div>
                                 <div class="sentiment-bar">
-                                    <div class="sentiment-fill sentiment-negative" style="width: 45%"></div>
+                                    <div class="sentiment-fill sentiment-positive" style="width: 82%"></div>
                                 </div>
                             </div>
-                            <div class="sentiment-score" style="color: var(--danger)">-32</div>
+                            <div class="sentiment-score" style="color: var(--success)">+82</div>
+                        </div>
+                        <div class="ticker-item">
+                            <div class="ticker-info">
+                                <div class="ticker-symbol">WMT</div>
+                                <div class="sentiment-bar">
+                                    <div class="sentiment-fill sentiment-negative" style="width: 55%"></div>
+                                </div>
+                            </div>
+                            <div class="sentiment-score" style="color: var(--danger)">-42</div>
                         </div>
                         <div class="ticker-item">
                             <div class="ticker-info">
                                 <div class="ticker-symbol">AMZN</div>
                                 <div class="sentiment-bar">
-                                    <div class="sentiment-fill sentiment-positive" style="width: 68%"></div>
+                                    <div class="sentiment-fill sentiment-negative" style="width: 35%"></div>
                                 </div>
                             </div>
-                            <div class="sentiment-score" style="color: var(--success)">+58</div>
+                            <div class="sentiment-score" style="color: var(--danger)">-20</div>
                         </div>
                     </div>
                     <div class="ai-commentary">
-                        <strong>AI Commentary:</strong> TSLA shows strongest bullish sentiment following battery tech breakthrough. NVDA maintains momentum on AI chip demand. META facing headwinds from regulatory concerns. Watch for AMZN earnings guidance.
+                        <strong>🤖 Freddy's Take:</strong> DE surging +9.77% — strongest S&P mover on earnings beat. NVDA buy ratings stacking up (Oppenheimer, Citi) on AI demand. WMT guidance miss dragging Dow (-0.32%). AMZN still weak on 9-day losing streak. BTC bouncing to $67K but crypto fear index at extreme lows — contrarian buy signal brewing. <span style="color: var(--accent-gold);">Pro subscribers get entry/exit levels →</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Freddy Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">🏆 Why Freddy vs. The Competition</h2>
+                    <p class="section-subtitle">Most newsletters charge more and give you less</p>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; background: var(--bg-card); border-radius: 12px; overflow: hidden;">
+                        <thead>
+                            <tr style="background: rgba(246, 173, 85, 0.15);">
+                                <th style="padding: 1rem 1.5rem; text-align: left; color: var(--accent-gold); font-weight: 600;">Feature</th>
+                                <th style="padding: 1rem 1.5rem; text-align: center; color: var(--accent-gold); font-weight: 600;">Freddy Pro ⚡</th>
+                                <th style="padding: 1rem 1.5rem; text-align: center; color: var(--text-muted); font-weight: 600;">Prospero.Ai</th>
+                                <th style="padding: 1rem 1.5rem; text-align: center; color: var(--text-muted); font-weight: 600;">Morning Brew</th>
+                                <th style="padding: 1rem 1.5rem; text-align: center; color: var(--text-muted); font-weight: 600;">Motley Fool</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1rem 1.5rem; color: var(--text-secondary);">Price</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center; color: var(--success); font-weight: 700;">$9/mo</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center; color: var(--text-muted);">~$30/mo</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center; color: var(--text-muted);">Free</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center; color: var(--text-muted);">$199/yr</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1rem 1.5rem; color: var(--text-secondary);">AI Sentiment Scores</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center;">✅</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center;">✅</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center;">❌</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center;">❌</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1rem 1.5rem; color: var(--text-secondary);">Reddit/WSB Tracking</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center;">✅</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center;">❌</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center;">❌</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center;">❌</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1rem 1.5rem; color: var(--text-secondary);">Crypto Signals</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center;">✅</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center;">❌</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center;">❌</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center;">❌</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1rem 1.5rem; color: var(--text-secondary);">Entry/Exit Levels</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center;">✅</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center;">✅</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center;">❌</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center;">❌</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1rem 1.5rem; color: var(--text-secondary);">Pre-Market Delivery</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center;">✅ 9:00 AM</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center;">✅</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center;">✅</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center;">❌</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 1rem 1.5rem; color: var(--text-secondary);">Free Tier</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center;">✅</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center;">❌</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center;">✅</td>
+                                <td style="padding: 1rem 1.5rem; text-align: center;">❌</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Disclaimer / Trust Section -->
+        <section class="section">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem;">
+                        <h3 style="color: var(--accent-cyan); margin-bottom: 1rem;">🔒 How We're Different</h3>
+                        <ul style="list-style: none; color: var(--text-secondary); line-height: 2;">
+                            <li>⚡ AI runs locally — no cloud dependencies</li>
+                            <li>⚡ 3 AI models cross-reference every signal</li>
+                            <li>⚡ Reddit + News + Financial data combined</li>
+                            <li>⚡ No affiliate links or sponsored picks</li>
+                            <li>⚡ Transparent methodology — we show our work</li>
+                        </ul>
+                    </div>
+                    <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem;">
+                        <h3 style="color: var(--accent-cyan); margin-bottom: 1rem;">📊 By The Numbers</h3>
+                        <ul style="list-style: none; color: var(--text-secondary); line-height: 2;">
+                            <li>⚡ <strong style="color: var(--text-primary);">20+</strong> tickers scanned daily</li>
+                            <li>⚡ <strong style="color: var(--text-primary);">50+</strong> data sources aggregated</li>
+                            <li>⚡ <strong style="color: var(--text-primary);">3</strong> AI models (Claude, GPT-4o, Grok)</li>
+                            <li>⚡ <strong style="color: var(--text-primary);">21 seconds</strong> avg scan time</li>
+                            <li>⚡ <strong style="color: var(--text-primary);">9:00 AM ET</strong> every weekday</li>
+                        </ul>
                     </div>
                 </div>
             </div>
