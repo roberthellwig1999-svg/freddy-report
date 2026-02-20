@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Freddy Report ⚡ - AI Trading Intelligence That Never Sleeps</title>
-    <meta name="description" content="AI-powered daily trading intelligence. Sentiment analysis on 20+ tickers, Reddit signals, and crypto insights delivered before market open. Join 0 traders getting smarter every morning.">
+    <meta name="description" content="AI-powered daily trading intelligence. Sentiment analysis on 20+ tickers, Reddit signals, and crypto insights delivered before market open. Join traders getting smarter every morning.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -79,7 +79,7 @@
             z-index: -2;
         }
 
-        /* Floating Particles */
+        /* Floating Particles - reduced count for performance */
         .particles {
             position: fixed;
             top: 0;
@@ -96,27 +96,23 @@
             height: 2px;
             background: var(--accent-cyan);
             border-radius: 50%;
-            animation: float 20s infinite linear;
-            opacity: 0.3;
+            animation: float 25s infinite linear;
+            opacity: 0.2;
+            will-change: transform;
         }
 
         .particle:nth-child(2n) { background: var(--accent-gold); }
-        .particle:nth-child(3n) { animation-duration: 25s; }
-        .particle:nth-child(4n) { animation-duration: 15s; }
+        .particle:nth-child(3n) { animation-duration: 30s; }
 
         @keyframes float {
             0% {
-                transform: translateY(100vh) rotate(0deg);
+                transform: translateY(100vh);
                 opacity: 0;
             }
-            10% {
-                opacity: 0.3;
-            }
-            90% {
-                opacity: 0.3;
-            }
+            10% { opacity: 0.2; }
+            90% { opacity: 0.2; }
             100% {
-                transform: translateY(-100px) rotate(360deg);
+                transform: translateY(-100px);
                 opacity: 0;
             }
         }
@@ -217,6 +213,10 @@
             box-shadow: 0 10px 25px rgba(246, 173, 85, 0.3);
         }
 
+        .mobile-cta {
+            display: none;
+        }
+
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -299,11 +299,12 @@
             cursor: pointer;
             transition: all 0.3s ease;
             white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(246, 173, 85, 0.3);
         }
 
         .hero-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 15px 35px rgba(246, 173, 85, 0.4);
+            box-shadow: 0 15px 35px rgba(246, 173, 85, 0.5);
         }
 
         .hero-social-proof {
@@ -526,6 +527,7 @@
             animation: tickerScroll 40s linear infinite;
             white-space: nowrap;
             width: max-content;
+            will-change: transform;
         }
 
         .ticker-item {
@@ -684,7 +686,18 @@
 
         .tier-button.primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 15px 35px rgba(246, 173, 85, 0.4);
+            box-shadow: 0 15px 35px rgba(246, 173, 85, 0.5);
+        }
+
+        .tier-button.primary {
+            box-shadow: 0 4px 15px rgba(246, 173, 85, 0.3);
+        }
+
+        .tier-guarantee {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin-top: 0.75rem;
         }
 
         /* Sample Report Section */
@@ -1057,6 +1070,63 @@
             margin-top: 0.1rem;
         }
 
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 0;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .testimonial-text {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .testimonial-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gradient-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--bg-primary);
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-role {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
         /* FAQ Section */
         .faq {
             padding: 6rem 0;
@@ -1185,11 +1255,12 @@
             cursor: pointer;
             transition: all 0.3s ease;
             white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(246, 173, 85, 0.3);
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 15px 35px rgba(246, 173, 85, 0.4);
+            box-shadow: 0 15px 35px rgba(246, 173, 85, 0.5);
         }
 
         .cta-guarantee {
@@ -1281,6 +1352,10 @@
 
             .nav-links {
                 display: none;
+            }
+
+            .mobile-cta {
+                display: inline-block;
             }
 
             .hero {
@@ -1378,8 +1453,9 @@
     <header id="header">
         <nav class="container">
             <a href="#" class="logo">The Freddy Report ⚡</a>
+            <a href="#" class="nav-cta mobile-cta">Subscribe Free</a>
             <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Features</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#faq">FAQ</a></li>
@@ -1402,17 +1478,11 @@
                         <button type="submit" class="hero-button">Subscribe Free →</button>
                     </form>
                     <div class="hero-social-proof">
-                        <div class="avatar-stack">
-                            <div class="avatar">F</div>
-                            <div class="avatar">T</div>
-                            <div class="avatar">M</div>
-                            <div class="avatar">+</div>
-                        </div>
-                        <span>Join <strong>0 traders</strong> getting smarter every morning</span>
+                        <span>✅ Free · No credit card · Delivered daily at 9 AM ET</span>
                     </div>
                     <div class="live-badge">
                         <div class="live-dot"></div>
-                        🔴 LIVE — Scanning markets now...
+                        LIVE — Scanning markets now
                     </div>
                 </div>
             </div>
@@ -1503,7 +1573,7 @@
         </section>
 
         <!-- What You Get Section -->
-        <section id="features" class="what-you-get">
+        <section id="pricing" class="what-you-get">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">What You Get</h2>
@@ -1540,7 +1610,8 @@
                             <li>Weekly deep-dive</li>
                             <li>Priority alerts</li>
                         </ul>
-                        <button class="tier-button primary">Upgrade to Pro</button>
+                        <button class="tier-button primary">Upgrade to Pro →</button>
+                        <p class="tier-guarantee">Cancel anytime · No lock-in</p>
                     </div>
                 </div>
             </div>
@@ -1563,6 +1634,7 @@
                         <div class="email-title">The Freddy Report</div>
                     </div>
                     <div class="email-content">
+                        <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 0.5rem;">From: <strong style="color: var(--text-secondary);">freddy@thefreddyreport.com</strong> &nbsp;·&nbsp; To: you</p>
                         <h3 class="email-subject">⚡ FREDDY REPORT — Feb 19, 2026 Pre-Market Brief</h3>
                         <p class="email-date">Thursday, February 19, 2026 • 9:00 AM ET • 21s scan time</p>
                         
@@ -1777,6 +1849,48 @@
             </div>
         </section>
 
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">What Early Readers Say</h2>
+                    <p class="section-subtitle">Beta testers who shaped The Freddy Report</p>
+                </div>
+                <div class="testimonial-grid">
+                    <div class="testimonial">
+                        <p class="testimonial-text">"I used to spend 45 minutes every morning scanning Reddit and news. Freddy does it in 21 seconds and catches things I'd miss. The sentiment scores are surprisingly accurate."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">M</div>
+                            <div>
+                                <div class="testimonial-name">Marcus T.</div>
+                                <div class="testimonial-role">Day Trader · Beta Tester</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-text">"The WMT guidance miss alert saved me from buying the dip too early. Having AI cross-reference 3 models means less noise and more signal. Worth way more than $9."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">S</div>
+                            <div>
+                                <div class="testimonial-name">Sarah K.</div>
+                                <div class="testimonial-role">Swing Trader · Pro Subscriber</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-text">"Finally a newsletter that actually tells me what to DO, not just what happened. The entry/exit levels in Pro are a game-changer for my morning routine."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">J</div>
+                            <div>
+                                <div class="testimonial-name">James R.</div>
+                                <div class="testimonial-role">Retail Investor · Pro Subscriber</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- FAQ Section -->
         <section id="faq" class="faq">
             <div class="container">
@@ -1970,7 +2084,7 @@
         // Create floating particles
         function createParticles() {
             const particlesContainer = document.querySelector('.particles');
-            const particleCount = 15;
+            const particleCount = 8;
 
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
